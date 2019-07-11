@@ -1,4 +1,5 @@
 package practice10;
 
-public class Teacher {
+public class Teacher extends Person{
+
 }
