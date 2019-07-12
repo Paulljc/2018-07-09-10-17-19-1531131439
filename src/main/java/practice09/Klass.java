@@ -10,7 +10,7 @@ public class Klass {
 
     public void assignLeader(Student student) {
         if (student.getKlass().getNumber() != this.number) {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         } else{
             this.leader = student;
         }
@@ -18,7 +18,7 @@ public class Klass {
 
     public void appendMember(Student student) {
         if (student.getKlass().getNumber() != this.number) {
-            System.out.println("It is not one of us.");
+            System.out.print("It is not one of us.\n");
         } else {
             assignLeader(student);
         }
