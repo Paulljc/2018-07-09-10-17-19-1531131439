@@ -3,13 +3,18 @@ package practice10;
 public class Student extends Person{
     private Klass klass;
 
-    public Student(Klass klass) {
+    public Student(int id, String name, int age, Klass klass) {
+        super(id, name, age);
         this.klass = klass;
     }
 
-    public Student(String name, int age, Klass klass) {
-        super(name, age);
-        this.klass = klass;
+    @Override
+    public String introduce(){
+        if (this.equals(klass.getLeader())) {
+            return String.format("%s I am a Student. I am Leader of Class %d.", super.introduce(), klass.getNumber());
+        } else {
+            return String.format("%s I am a Student. I am at Class %d.", super.introduce(), klass.getNumber());
+        }
     }
 
     public Klass getKlass() {
@@ -19,21 +24,4 @@ public class Student extends Person{
     public void setKlass(Klass klass) {
         this.klass = klass;
     }
-
-    public Student(int id, String name, int age, Klass klass) {
-        super(id, name, age);
-        this.klass = klass;
-    }
-
-    public Student() {
-    }
-
-//    @Override
-//    public String introduce() {
-//        if (klass.getLeader() != null && klass.getLeader().getId() == super.getId()) {
-//            return String.format("%1$s I am a Student. I am Leader of %2$s.", super.introduce(), this.klass.getDisplayName());
-//        }else {
-//            return String.format("%1$s I am a Student. I am at %2$s.",super.introduce(), klass.getDisplayName());
-//        }
-//    }
 }
